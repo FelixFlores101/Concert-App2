@@ -1,3 +1,7 @@
+body {
+  background-color: #eee;
+}
+
 .App {
   text-align: center;
 }
@@ -34,7 +38,7 @@
 }
 
 .item {
-  border: 1px solid black;
+  border: 1px solid #eee;
   width: 350px;
   padding: .5rem;
   text-align: left;
@@ -42,14 +46,17 @@
   min-width: 150px;
   display: flex;
   flex-flow: column;
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0px 1px 1px rgb(125, 123, 123);
 }
 
 .item > .comments {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #0000007a;
   text-align: left;
-  padding-left: 5px;
   align-self: center;
+  border-radius: 2px;
 }
 
 .item > .item-info > .muted {
