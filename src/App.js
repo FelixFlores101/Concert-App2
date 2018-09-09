@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Item from './item.js'
+import NewEvent from './new_event.js'
 
 class App extends Component {
   constructor() {
@@ -22,8 +23,6 @@ class App extends Component {
       })
     }.bind(this)
     xhr.send()
-
-
   }
 
   componentWillMount() {
@@ -51,8 +50,12 @@ class App extends Component {
       )
     })
     return (
-      <div className="App container-grid">
-        {renderEvents}
+      <div>
+        <NewEvent />
+        <h1>All Events</h1>
+        <div className="App container-grid">
+          {renderEvents}
+        </div>
       </div>
     );
   }

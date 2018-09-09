@@ -26,6 +26,7 @@ export default class Item extends React.Component {
             xhr.onload = () => {
                 console.log('Event Deleted')
                 alert('Event Deleted')
+                
             }
             xhr.send()
         }
