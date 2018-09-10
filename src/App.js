@@ -31,11 +31,15 @@ class App extends Component {
 
   getNewEvent() {
     this.getBands()
-    console.log('got a newevent from child')
+    // console.log('got a newevent from child')
   }
 
   handleDelete() {
-    console.log('master component recognizes something was changed')
+    // console.log('master component recognizes something was changed')
+    this.getBands()
+  }
+
+  handleUpdate() {
     this.getBands()
   }
 
@@ -56,7 +60,7 @@ class App extends Component {
     let that = this
     let renderEvents = this.state.events.map(function(event) {
       return (
-        <Item key={event.id} event={event} handleDelete={that.handleDelete.bind(that)} />
+        <Item key={event.id} event={event} handleDelete={that.handleDelete.bind(that)} handleUpdate={that.handleUpdate.bind(this)} />
       )
     })
     return (

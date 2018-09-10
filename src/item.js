@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import EditEvent from './edit_event';
 
 
 
@@ -12,7 +13,7 @@ export default class Item extends React.Component {
     }
 
     handleEdit() {
-        
+        this.openModal()    
     }
 
     handleDelete() {
@@ -30,6 +31,19 @@ export default class Item extends React.Component {
             }.bind(this)
             xhr.send()
         }
+    }
+
+    openModal() {
+        let modalWrapper = document.createElement('div')
+        let modal = document.createElement('div')
+        modal.className='modal'
+        modalWrapper.className = 'modal-container'
+        let body = document.querySelector('body')
+        body.appendChild(modalWrapper)
+        modalWrapper.appendChild(modal)
+        return (
+            <div>Hellooooo</div>
+        )
     }
 
 
@@ -52,6 +66,7 @@ export default class Item extends React.Component {
                         <textarea placeholder='Type your comment out' maxLength='450'></textarea>
                     </form>
                 </div>
+                <EditEvent/>
             </div>
         )
     }
