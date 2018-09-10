@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   getBands() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:3000/events', true)
     xhr.onload = function() {
       let response = JSON.parse(xhr.responseText)

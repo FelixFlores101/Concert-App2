@@ -40,7 +40,7 @@ export default class NewEvent extends React.Component {
     render() {
         return (
             <div>
-                <h1>Create A New Event</h1>
+                <h1>Concerto</h1>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input name='band_name' placeholder='Enter Band Name'/>
                     <input name='event_name' placeholder='Enter Event Name'/>

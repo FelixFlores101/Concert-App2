@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import EditEvent from './edit_event';
+// import EditEvent from './edit_event';
 
 
 
@@ -18,7 +18,7 @@ export default class Item extends React.Component {
 
     handleDelete() {
         // this.deleteEvent()
-        var conf = window.confirm(`Are you sure you want to delete the event with the id of ${this.props.event.id}`)
+        let conf = window.confirm(`Are you sure you want to delete the event with the id of ${this.props.event.id}`)
         if(!conf) {
             // Do Nothing            
         } else {
@@ -33,19 +33,19 @@ export default class Item extends React.Component {
         }
     }
 
-    openModal() {
-        let modalWrapper = document.createElement('div')
-        let modal = document.createElement('div')
-        modal.className='modal'
-        modalWrapper.className = 'modal-container'
-        let body = document.querySelector('body')
-        body.appendChild(modalWrapper)
-        modalWrapper.appendChild(modal)
-        return (
-            <div>Hellooooo</div>
-        )
-    }
-
+    // openModal() {
+    //     let modalWrapper = document.createElement('div')
+    //     let modal = document.createElement('div')
+    //     modal.className='modal'
+    //     modalWrapper.className = 'modal-container'
+    //     let body = document.querySelector('body')
+    //     body.appendChild(modalWrapper)
+    //     modalWrapper.appendChild(modal)
+    //     return (
+    //         <div>Hellooooo</div>
+    //     )
+    // }
+// Modal is having problems
 
 
     render() {
@@ -66,7 +66,7 @@ export default class Item extends React.Component {
                         <textarea placeholder='Type your comment out' maxLength='450'></textarea>
                     </form>
                 </div>
-                <EditEvent/>
+                {/* <EditEvent/> */}
             </div>
         )
     }
