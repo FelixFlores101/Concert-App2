@@ -29,29 +29,39 @@ class App extends Component {
     this.getBands()
   }
 
+  getNewEvent() {
+    this.getBands()
+    console.log('got a newevent from child')
+  }
+
+  handleDelete() {
+    console.log('master component recognizes something was changed')
+    this.getBands()
+  }
+
   renderEvents() {
-    if(this.state.events.length > 0) {
+    if(this.state.events.length >= 1) {
       this.state.events.map((event) => {
         return (
           <Item />
         )
       })
-    } else {
-      return (
-        <div>No Events Yet.</div>
-      )
     }
+    return (
+      <div>No Events Yet.</div>
+    )
   }
 
   render() {
-    var renderEvents = this.state.events.map(function(event) {
+    let that = this
+    let renderEvents = this.state.events.map(function(event) {
       return (
-        <Item key={event.id} event={event} />
+        <Item key={event.id} event={event} handleDelete={that.handleDelete.bind(that)} />
       )
     })
     return (
       <div>
-        <NewEvent />
+        <NewEvent triggerUpdate={this.getNewEvent.bind(this)}/>
         <h1>All Events</h1>
         <div className="App container-grid">
           {renderEvents}

@@ -23,11 +23,11 @@ export default class Item extends React.Component {
         } else {
             let xhr = new XMLHttpRequest()
             xhr.open('delete', `http://localhost:3000/events/${this.props.event.id}`,true)
-            xhr.onload = () => {
+            xhr.onload = function() {
                 console.log('Event Deleted')
                 alert('Event Deleted')
-                
-            }
+                this.props.handleDelete()
+            }.bind(this)
             xhr.send()
         }
     }

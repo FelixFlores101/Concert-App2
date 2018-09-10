@@ -29,7 +29,8 @@ export default class NewEvent extends React.Component {
         const jsonObject = JSON.stringify(newJsonObject)
         xhr.onload = function() {
             console.log('added to events', xhr.responseText)
-        }
+            this.props.triggerUpdate()
+        }.bind(this)
         // console.log(jsonObject)
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
         xhr.send(jsonObject)
