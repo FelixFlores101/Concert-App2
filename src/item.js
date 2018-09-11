@@ -13,6 +13,7 @@ export default class Item extends React.Component {
     }
 
     handleEdit() {
+        //open modal on edit click
         this.openModal()    
     }
 
